@@ -25,35 +25,20 @@ class gaode extends Component {
             simpleText: 'pick a time',
         }
     }
-    async showPicker(stateKey, options) {
-        try {
-            const {action, minute, hour} = await Indoor.open(options);
-            var newState = {};
-            if (action === Indoor.timeSetAction) {
-                newState[stateKey + 'Text'] = _formatTime(hour, minute);
-                newState[stateKey + 'Hour'] = hour;
-                newState[stateKey + 'Minute'] = minute;
-            } else if (action === Indoor.dismissedAction) {
-                newState[stateKey + 'Text'] = 'dismissed';
-            }
-            this.setState(newState);
-        } catch (Error) {
-            console.warn(`Error in example '${stateKey}': `, message);
-        }
+
+    async showGaode(){
+       Indoor.open();
     }
   render() {
     return (
       <View style={styles.container}>
 
-          <TouchableWithoutFeedback
-              onPress={this.showPicker.bind(this, 'preset', {
-              hour: this.state.presetHour,
-              minute: this.state.presetMinute,
-            })}>
-              <View>
-              <Text>请按按钮</Text>
-              <Text style={styles.text}>{this.state.presetText}</Text></View>
-              </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={this.showGaode} style={{marginBottom:20}}>
+                <View style={{width:200,height:200,backgroundColor:'blue'}}>
+                    <Text>Gaode</Text>
+                    </View>
+                </TouchableWithoutFeedback>
+
       </View>
     );
   }

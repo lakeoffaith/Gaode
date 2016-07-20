@@ -18,7 +18,8 @@ public class IndoorReactPackage implements ReactPackage{
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-                new TimePickerDialogModule(reactContext)
+                new TestModule(reactContext)
+               /* new AMapModule(reactContext)*/
         );
     }
 

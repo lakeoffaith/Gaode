@@ -1,15 +1,14 @@
 package com.gaode;
 
-import com.facebook.react.ReactActivity;
 
-public class MainActivity extends ReactActivity {
+import com.facebook.react.MyActivity;
+import com.facebook.react.modules.timepicker.TimePickerDialogModule;
 
-    /**
-     * Returns the name of the main component registered from JavaScript.
-     * This is used to schedule rendering of the component.
-     */
+public class MainActivity extends MyActivity {
+
     @Override
     protected String getMainComponentName() {
         return "gaode";
     }
+
 }
